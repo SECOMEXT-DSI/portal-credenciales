@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Estilos específicos para la página de administración */
+.header {
+    position: fixed;
+    top: 10px;
+    width: 90%;
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header img {
+    max-width: 200px;
+}
+
+.header h1 {
+    margin: 10px 0 0 0;
+}
+
+body.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px; /* Altura del encabezado */
+}
+
+.container.admin {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para la página de verificación */
+body.verification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container.verification {
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container img {
+    max-width: 250px;
+}
+
+.status {
+    font-size: 30px;
+    color: #333333;
+}
+.status .active {
+    color: green;
+}
+
+.status .inactive {
+    color: red;
+}
+
+/* Estilos comunes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th, td {
+    padding: 12px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.form-container {
+    margin: 20px 0;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn.save {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn.save:hover {
+    background-color: #45a049;
+}
+
+.btn.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn.delete:hover {
+    background-color: #e53935;
+}

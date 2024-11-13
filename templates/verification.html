@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificación de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+</head>
+<body class="verification">
+    <div class="container verification">
+        <img src="/static/logo.png" alt="Logo de la Empresa">
+        {% if status == "invalid" %}
+        <div class="status inactive">El usuario no existe.</div>
+        {% else %}
+        <div class="status"><br>PSP:<br>{{ name }}<br><br>Estado:<br><span class="{{ status_class }}">{{ status }}</span></div>
+        {% endif %}
+    </div>
+</body>
+</html>

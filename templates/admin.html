@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrar Usuarios</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+</head>
+<body class="admin">
+    <div class="header">
+        <img src="/static/logo.png" alt="Logo de la Empresa">
+        <h1>Administrador de Usuarios</h1>
+    </div>
+    <div class="container admin">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Fecha de Expiración</th>
+                <th>Acciones</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td><input type="checkbox" {% if user[2] %}checked{% endif %} onclick="updateStatus('{{ user[0] }}', this.checked)"></td>
+                <td><input type="date" id="expiration_{{ user[0] }}" value="{{ user[3] }}"></td>
+                <td>
+                    <button class="btn save" onclick="updateExpirationDate('{{ user[0] }}')">Guardar</button>
+                    <button class="btn delete" onclick="deleteUser('{{ user[0] }}')">Eliminar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="form-container">
+            <h2>Añadir Usuario</h2>
+            <form id="addUserForm">
+                <label for="new_id">ID:</label>
+                <input type="text" id="new_id" name="id" required><br><br>
+                <label for="new_name">Nombre:</label>
+                <input type="text" id="new_name" name="name" required><br><br>
+                <label for="new_valid">Estado:</label>
+                <input type="checkbox" id="new_valid" name="valid"><br><br>
+                <label for="new_expiration_date">Fecha de Expiración:</label>
+                <input type="date" id="new_expiration_date" name="expiration_date"><br><br>
+                <button type="submit">Añadir Usuario</button>
+            </form>
+        </div>
+        <div id="response"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

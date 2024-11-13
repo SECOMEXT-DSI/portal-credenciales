@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor EVS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='monitor_style.css') }}">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo">
+        <h1>Monitor de Estado del EVS</h1>
+    </div>
+
+    <div class="container">
+        <div class="status-container">
+            <p id="status" class="status">Cargando...</p>
+            <p id="timestamp"></p>
+        </div>
+
+        <div class="charts">
+            <div>
+                <canvas id="statusChart" width="600" height="300"></canvas>
+                <p class="chart-title">Historial de Estado</p>
+            </div>
+            <div>
+                <canvas id="availabilityChart" width="300" height="300"></canvas>
+                <p class="chart-title">Porcentaje de Disponibilidad</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Servicios Electrónicos de Comercio Exterior S.A. de C.V. Todos los derechos reservados.</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='monitor.js') }}"></script>
+</body>
+</html>
